@@ -1,8 +1,75 @@
 
 
+
 (function ($) {
 
 "use strict"
+    
+    
+    ////////////////////////////////////////////////////
+    //  Scroll To Top Js
+
+    function smoothSctollTop() {
+
+        $('.smooth-scroll a').on('click', function (event) {
+
+            var target = $(this.getAttribute('href'));
+
+            if (target.length) {
+
+                event.preventDefault();
+
+                $('html, body').stop().animate({
+
+                    scrollTop: target.offset().top - 0
+
+                }, 1500);
+
+            }
+
+        });
+
+    }
+
+    smoothSctollTop();
+
+
+
+    // Show or hide the sticky footer button
+
+    $(window).on('scroll', function (event) {
+
+        if ($(this).scrollTop() > 600) {
+
+            $('#scroll').fadeIn(200)
+
+        } else {
+
+            $('#scroll').fadeOut(200)
+
+        }
+
+    });
+
+
+    //Animate the scroll to yop
+
+    $('#scroll').on('click', function (event) {
+
+        event.preventDefault();
+
+
+
+        $('html, body').animate({
+
+            scrollTop: 0,
+
+        }, 1500);
+
+    });
+
+    
+    
     
  ////////////////////////////////////////////////////
 
@@ -555,7 +622,7 @@ window.addEventListener("scroll", function () {
   } else {
     navbar.classList.remove("fixed-nav");
   }
-  //setup back to top link
+/*  //setup back to top link
   
   if (scrollHeight > 500) {
     topLink.classList.add("show-link");
@@ -563,7 +630,7 @@ window.addEventListener("scroll", function () {
     
     else {
     topLink.classList.remove("show-link");
-  }
+  }*/
     
 });
 
